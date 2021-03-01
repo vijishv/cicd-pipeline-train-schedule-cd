@@ -29,7 +29,7 @@ pipeline {
                                         sourceFiles: 'dist/trainSchedule.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo /usr/bin/systemctl stop train-schedule && rm -rf /opt/train-schedule/* && unzip /tmp/trainSchedule.zip -d /opt/train-schedule && sudo /usr/bin/systemctl start train-schedule'
+                                        execCommand: 'sudo npm stop /opt/train-schedule-staging/app.js && rm -rf /opt/train-schedule-staging* && unzip /tmp/trainSchedule.zip -d /opt/train-schedule-staging && sudo npm start /opt/train-schedule-staging/app.js'
                                     )
                                 ]
                             )
@@ -61,7 +61,7 @@ pipeline {
                                         sourceFiles: 'dist/trainSchedule.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo /usr/bin/systemctl stop train-schedule && rm -rf /opt/train-schedule/* && unzip /tmp/trainSchedule.zip -d /opt/train-schedule && sudo /usr/bin/systemctl start train-schedule'
+                                        execCommand: 'sudo npm stop /opt/train-schedule-prod/app.js && rm -rf /opt/train-schedule-prod* && unzip /tmp/trainSchedule.zip -d /opt/train-schedule-prod && sudo npm start /opt/train-schedule-prod/app.js'
                                     )
                                 ]
                             )
